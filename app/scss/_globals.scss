@@ -1,0 +1,119 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-sm;
+    font-weight: 300;
+    line-height: 1.3;
+    color: $grayishBlue;
+    line-height: 1.3;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    font-weight: 300;
+    line-height: 1.2;
+    color: $darkBlue;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 2.8125rem; // 45px
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+// Spacing
+.container {
+    max-width: 69.625rem;
+    margin: 0 auto;
+    
+    &-pad-xy {
+        padding-top: 1.375rem;
+        padding-right: 1.375rem;
+        padding-bottom: 1.375rem;
+        padding-left: 1.375rem;
+    }
+
+    &-pad-x {
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+    }
+
+    &-pad-xy-h {
+        padding-top: 2.8125rem;
+        padding-right: 1.875rem;
+        padding-bottom: 5.625rem;
+        padding-left: 1.875rem;
+    }
+}
+
+button, 
+.button {
+    position: relative;
+    padding: 1rem 2.125rem;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background: linear-gradient(to left, $brightCyan, $limeGreen);
+    font-size: $font-sm;
+    font-weight: 700;
+    color: $white;
+    overflow: hidden;
+    transition: opacity .2s ease-in-out;
+
+    &:hover {
+        opacity: 60%;
+    }
+}
+
+// Flexbox
+
+.flex {
+
+    display: flex;
+
+    &-jc-sb {
+    justify-content: space-between;
+    }
+
+    &-jc-c {
+    justify-content: center;
+    }
+
+    &-ai-c {
+    align-items: center;
+    }
+}
+
+// visibility for tablet and mobile
+.hide-on-mobile { 
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+// visibility for desktop
+.hide-on-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}

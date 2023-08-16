@@ -1,0 +1,126 @@
+.header {
+    background: $white;
+     // Active Hamburger Styles
+    &.active {
+
+        .header__toggler {
+            animation: smallbig 0.6s forwards;
+
+            > span:nth-child(1) {
+                transform: rotate(45deg);
+                transition-delay: 0.2s;
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+                transition-delay: 0.2s;
+            }
+
+            > span:nth-child(3) {
+                transform: rotate(-45deg);
+                transition-delay: 0.2s;
+            }
+        }
+    }
+
+    .layer {
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient($darkBlue, transparent);
+
+        &.fade-in {
+            display: block;
+        }
+
+        &.fade-out {
+            display: none;
+        }
+    }
+
+    nav {
+        position: relative;
+        background: $white;
+    }
+    
+    &__logo {
+
+        img {
+            width: 9.0625rem;
+            height: 1.375rem;
+        }
+    }
+
+    &__links {
+        a {
+            position: relative;
+            font-size: $font-sm;
+            color: $grayishBlue;
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: $darkBlue;
+            }
+
+            &:not(:last-child) {
+                margin-right: 33px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -25px;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(to left, $brightCyan, $limeGreen);
+                border-radius: 5px;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: transform 0.2s;
+            }
+
+            &:hover::after {
+                transform-origin: left;
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        background: $white;
+        padding: 1.625rem;
+        width: calc(100% - 3.125rem);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        margin-top: 1.5625rem;
+
+        a {
+            display: grid;
+            padding: .625rem;
+            text-align: center;
+            color: $darkBlue;
+        }
+    }
+
+    &__toggler { // Mobile
+
+        > span {
+            display: block;
+            background: $darkBlue;
+            width: 25px;
+            height: 2px;
+            transform-origin: 4px 1px;
+            transition: all .3s ease-in-out;
+
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+        }
+    }
+}
