@@ -10,7 +10,7 @@
 
     &__img {
         position: relative;
-        background: url('/images/bg-intro-mobile.svg') no-repeat;
+        background: url('../images/bg-intro-mobile.svg') no-repeat;
         background-size: cover;
         background-position: center center;
         min-height: 19.5rem;
@@ -31,7 +31,7 @@
             @include breakpoint-up(large) {
                 content: '';
                 position: absolute;
-                background: url('/images/bg-intro-desktop.svg')no-repeat;
+                background: url('../images/bg-intro-desktop.svg')no-repeat;
                 background-position: center bottom;
                 height: 104%;
                 width: 150%;
@@ -43,7 +43,7 @@
         &::after {
             content: '';
             position: absolute;
-            background: url('/images/image-mockups.png')no-repeat;
+            background: url('../images/image-mockups.png')no-repeat;
             background-size: 91%;
             background-position: center bottom;
             width: 100%;
