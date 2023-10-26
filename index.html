@@ -14,8 +14,8 @@
 <body> 
     
     <header class="header">
-        <div class="overlay fizzle-out"></div>
-        <nav class="container container-pad-xy flex flex-jc-sb flex-ai-c">
+        <div class="overlay fizzle-out" style="z-index: 1;"></div>
+        <nav class="container container-pad-xy flex flex-jc-sb flex-ai-c" style="z-index: 1;">
             <a href="/" class="header__logo">
                 <img src="images/logo.svg" alt="Easybank">
             </a>
@@ -36,7 +36,7 @@
             <button class="hide-on-mobile" type="button">Request Invite</button>
         </nav>
 
-        <div class="header__menu fizzle-out">
+        <div class="header__menu fizzle-out" style="z-index: 2;">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
@@ -204,7 +204,7 @@
     </section>
 
     <footer class="footer">
-        <div class="container">
+        <div class="container container container-pad-xy">
             <a class="footer__logo" href="#">
                 <img src="images/logo-dark.svg"/>
             </a>
@@ -265,16 +265,12 @@
             </div>
 
             <div class="footer__cta">
-                <a href="#" class="button">Request Invite</a>
+                <button type="button">Request Invite</button>
             </div>
 
-            <div class="footer__copyright">
-            &copy; EasyBank. All Rights Reserved.
+            <div class="footer__copyright" style="margin-top: 1.875rem;">
+                &copy; EasyBank. All Rights Reserved.
             </div>
-        </div>
-        <div class="attribution">
-            &copy;hallenge by Frontend Mentor
-        </div>
     </footer>
 
     <script src="/app/js/main.js"></script>
